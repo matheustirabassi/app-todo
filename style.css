@@ -5,7 +5,7 @@
     padding: 0;
     border: none;
     outline: none;
-    background-color: rgb(203, 230, 253);
+    /*background-color: rgb(203, 230, 253);*/
 }
 
 body,
@@ -52,9 +52,31 @@ h1 {
     font-size: 24px;
 }
 
+.div1 button:hover {
+    border: none!important;
+    background: blue;
+}
+
 .div2 {
     margin-top: 32px;
     width: 70%;
+}
+
+.btnEditar {
+    margin-left: auto;
+    margin-right: 10px;
+    border-radius: 8px;
+    width: 40px;
+    height: 40px;
+    font-size: 23px;
+    cursor: pointer;
+    color: gold;
+    background: none;
+}
+
+.btnEditar:hover {
+    border: none!important;
+    background: rgba(0, 255, 13, 0.671);
 }
 
 ul {
@@ -72,8 +94,18 @@ li {
     font-size: 24px;
 }
 
-a {
+.btnExcluir {
+    font-size: 23px;
+    border-radius: 8px;
+    width: 40px;
+    height: 40px;
     text-decoration: none;
     color: tomato;
     cursor: pointer;
+    background: none;
+}
+
+.btnExcluir:hover {
+    border: none!important;
+    background: rgb(102, 102, 101);
 }
