@@ -24,10 +24,46 @@ input {
 
 h1 {
     margin-top: 16px;
-    font-size: 48px;
+    font-size: 55px;
     color: rgb(0, 0, 0);
 }
+h1 span{
+    display: flex;
+    margin:auto;
+}
+.btnStatusTarefa{
+    padding: 4px 16px;
+    border-radius: 34px;
+    cursor: pointer;
+    margin:10px;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    
+}
+#tarefasEmAndamento{
+    background-color: gold;
+}
+#tarefasConcluidas{
+    background-color: #2bff7c;
+}
+#todasAsTarefas{
+    background-color: black;
+}
+.btnStatusTarefa:hover{
+    background-color: blue!important;
+}
+.btnStatusTarefa:visited{
+    background-color: red!important;
+    color:red!important;
+}
 
+.checkBoxStatus{
+    color:#3c3a3a;
+    padding: 5px;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+}
 .div1 {
     margin-top: 32px;
     width: 70%;

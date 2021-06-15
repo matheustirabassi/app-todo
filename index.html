@@ -7,16 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de tarefas</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
     <div class="content">
-        <h1>Lista de tarefas</h1>
+        <h1>Lista de tarefas
+            <span>
+                <button class = btnStatusTarefa id="todasAsTarefas">Todas</button>
+                <button class = btnStatusTarefa id="tarefasEmAndamento">Em Andamento</button>
+                <button class = btnStatusTarefa id="tarefasConcluidas">Concluídas</button>
+            </span>
+            
+        </h1>
 
         <div class="div1">
-            <input type="text" placeholder="Digite uma tarefa..." , id=1>
+            
+            <input type="text", placeholder="Digite uma tarefa...", id='imputTarefaPrincipal'>
             <button id='btnDeletarTudo'>Deletar tudo</button>
         </div>
         <div class="div2">
@@ -42,7 +50,8 @@
     </div>
     <div id="janelaEdicaoFundo"></div>
 
-    <script src="main.js"></script>
+    
+    <script src="js/main.js"></script>
 </body>
 
 </html>
