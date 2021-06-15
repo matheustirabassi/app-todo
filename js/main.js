@@ -4,14 +4,16 @@ const btnExcluirTudo = document.querySelector('#btnDeletarTudo').setAttribute('o
 const janelaEdicao = document.querySelector('#janelaEdicao')
 const janelaEdicaoFundo = document.querySelector('#janelaEdicaoFundo')
 const janelaEdicaoFundoBtnFechar = document.querySelector('#janelaEdicaoBtnFechar')
-const btnAtualizarTarefa = document.querySelector('#btnAtualizarTarefa')
+const btnSalvar = document.querySelector('#btnSalvar')
 const btnTarefasEmAndamento = document.querySelector('#tarefasEmAndamento')
 const btnTarefasConcluidas = document.querySelector('#tarefasConcluidas')
 const btnTodasAsTarefas = document.querySelector('#todasAsTarefas')
-elementoImput.value = null
+
+
+
+
 janelaEdicaoBtnFechar.addEventListener('click', (e) => {
     alternarJanelaEdicao();
-    mostrarTarefas()
 })
 
 elementoImput.addEventListener('keypress', (e) => {
@@ -36,23 +38,23 @@ btnTarefasConcluidas.addEventListener('click', (e) => {
 
 class Tarefa {
     constructor(texto, status) {
-        this.texto = texto
-        this.status = status
+        this._texto = texto
+        this._status = status
     }
     toString() {
         return `texto: ${this.texto}, status: ${this.status}`
     }
-    getTexto() {
-        return this.texto
+    get texto() {
+        return this._texto
     }
-    setTexto(texto) {
-        this.texto = texto
+    set texto(texto) {
+        this._texto = texto
     }
-    getStatus() {
-        return this.status
+    get status() {
+        return this._status
     }
-    setStatus(status) {
-        this.status = status
+    set status(status) {
+        this._status = status
     }
 }
 const tarefas = []
@@ -62,17 +64,16 @@ function mostrarTarefas() {
 
     for (tarefa of tarefas) {
         const lstTarefa = document.createElement('li')
-        const txtTarefa = document.createTextNode(tarefa.getTexto())
+        const txtTarefa = document.createTextNode(tarefa.texto)
         const posTarefa = tarefas.indexOf(tarefa)
 
         const checkBox = document.createElement('input')
         checkBox.setAttribute('type', 'checkbox')
-        if (tarefa.getStatus() == 1) {
+        if (tarefa.status == 1) {
             checkBox.checked = true
         }
 
         checkBox.classList.add('checkBoxStatus')
-        checkBox.addEventListener('click', alternarCheckBox(posTarefa, checkBox.checked))
         checkBox.setAttribute('onclick', `alternarCheckBox(${posTarefa}, ${!checkBox.checked})`)
 
         const btnEditar = document.createElement('button')
@@ -99,7 +100,7 @@ function mostrarTarefas() {
 }
 function alternarCheckBox(pos, valor) {
     console.log(valor)
-    tarefas[pos].setStatus(valor)
+    tarefas[pos].status = valor
     if (valor == true) {
         mostrarTarefasPorStatus(false)
     }
@@ -109,14 +110,14 @@ function alternarCheckBox(pos, valor) {
 function mostrarTarefasPorStatus(status) {
     elementoLista.innerHTML = null
     for (const tarefa of tarefas) {
-        if (tarefa.getStatus() == status) {
+        if (tarefa.status == status) {
             const lstTarefa = document.createElement('li')
-            const txtTarefa = document.createTextNode(tarefa.getTexto())
+            const txtTarefa = document.createTextNode(tarefa.texto)
             const posTarefa = tarefas.indexOf(tarefa)
 
             const checkBox = document.createElement('input')
             checkBox.setAttribute('type', 'checkbox')
-            if (tarefa.getStatus() == 1) {
+            if (tarefa.status == 1) {
                 checkBox.checked = true
             }
             checkBox.classList.add('checkBoxStatus')
@@ -164,22 +165,26 @@ function removerTarefa(posTarefa) {
     mostrarTarefas()
 
 }
-
-function editarTarefa(posTarefa) {
-    alternarJanelaEdicao()
-    document.querySelector('#inputTarefaEdicao').setAttribute('placeholder', tarefas[posTarefa].getTexto())
-    btnAtualizarTarefa.setAttribute('onclick', `ClickAtualizarTarefa(${posTarefa})`)
-
-}
-function ClickAtualizarTarefa(posTarefa) {
-    const txtTarefa = document.querySelector('#inputTarefaEdicao')
-    tarefas[posTarefa].setTexto(txtTarefa.value)
-    console.log(tarefas[posTarefa].getTexto())
+function clickAtualizarTarefa(pos) {
+    tarefas[pos].texto = (document.querySelector('#inputTarefaEdicao').value)
+    console.log(tarefas[pos].texto)
     mostrarTarefas()
     alternarJanelaEdicao()
-    document.querySelector('#inputTarefaEdicao').value = null
 
 }
+
+function salvarTarefa(pos) {
+    console.log(document.querySelector('#inputTarefaEdicao').value)
+    tarefas[pos].texto = document.querySelector('#inputTarefaEdicao').value
+    alternarJanelaEdicao()
+    mostrarTarefas()
+}
+function editarTarefa(pos) {
+    document.querySelector('#inputTarefaEdicao').setAttribute('placeholder', tarefas[pos].texto)
+    alternarJanelaEdicao()
+    btnSalvar.setAttribute('onclick', `salvarTarefa(${pos})`)
+}
+
 
 function deletarTudo() {
     if (tarefas != 0) {
