@@ -1,3 +1,27 @@
+class Tarefa {
+    constructor(texto, status) {
+        this.texto = texto
+        this.status = status
+    }
+    toString() {
+        return `texto: ${this.texto}, status: ${this.status}`
+    }
+    get _texto() {
+        return this.texto
+    }
+    set _texto (texto) {
+        this.texto = texto
+    }
+    get _status() {
+        return this.status
+    }
+    set _status(status) {
+        this.status = status
+    }
+}
+
+const tarefas = (JSON.parse(localStorage.getItem('list_tarefas'))) || []
+
 const elementoLista = document.querySelector('ul')
 const elementoImput = document.querySelector('#imputTarefaPrincipal')
 const btnExcluirTudo = document.querySelector('#btnDeletarTudo').setAttribute('onclick', 'deletarTudo()')
@@ -8,7 +32,6 @@ const btnSalvar = document.querySelector('#btnSalvar')
 const btnTarefasEmAndamento = document.querySelector('#tarefasEmAndamento')
 const btnTarefasConcluidas = document.querySelector('#tarefasConcluidas')
 const btnTodasAsTarefas = document.querySelector('#todasAsTarefas')
-
 
 
 
@@ -36,28 +59,9 @@ btnTarefasConcluidas.addEventListener('click', (e) => {
 })
 
 
-class Tarefa {
-    constructor(texto, status) {
-        this._texto = texto
-        this._status = status
-    }
-    toString() {
-        return `texto: ${this.texto}, status: ${this.status}`
-    }
-    get texto() {
-        return this._texto
-    }
-    set texto(texto) {
-        this._texto = texto
-    }
-    get status() {
-        return this._status
-    }
-    set status(status) {
-        this._status = status
-    }
-}
-const tarefas = []
+
+mostrarTarefas()
+
 
 function mostrarTarefas() {
     elementoLista.innerHTML = null
@@ -69,9 +73,7 @@ function mostrarTarefas() {
 
         const checkBox = document.createElement('input')
         checkBox.setAttribute('type', 'checkbox')
-        if (tarefa.status == 1) {
-            checkBox.checked = true
-        }
+        checkBox.checked = tarefa.status
 
         checkBox.classList.add('checkBoxStatus')
         checkBox.setAttribute('onclick', `alternarCheckBox(${posTarefa}, ${!checkBox.checked})`)
@@ -101,6 +103,7 @@ function mostrarTarefas() {
 function alternarCheckBox(pos, valor) {
     console.log(valor)
     tarefas[pos].status = valor
+    salvarNoLocalStorage()
     if (valor == true) {
         mostrarTarefasPorStatus(false)
     }
@@ -117,9 +120,9 @@ function mostrarTarefasPorStatus(status) {
 
             const checkBox = document.createElement('input')
             checkBox.setAttribute('type', 'checkbox')
-            if (tarefa.status == 1) {
-                checkBox.checked = true
-            }
+
+            checkBox.checked = tarefa.status
+
             checkBox.classList.add('checkBoxStatus')
             checkBox.setAttribute('onclick', `alternarCheckBox(${posTarefa}, ${!checkBox.checked})`)
 
@@ -156,12 +159,14 @@ function adicionarTarefas() {
         alert("O texto não pode ser vazio")
     }
     elementoImput.value = null
+    salvarNoLocalStorage()
     mostrarTarefas()
 
 }
 
 function removerTarefa(posTarefa) {
     tarefas.splice(posTarefa, 1)
+    salvarNoLocalStorage()
     mostrarTarefas()
 
 }
@@ -173,25 +178,28 @@ function clickAtualizarTarefa(pos) {
 
 }
 
-function salvarTarefa(pos) {
+function btnAtualizarTarefa(pos) {
     console.log(document.querySelector('#inputTarefaEdicao').value)
     tarefas[pos].texto = document.querySelector('#inputTarefaEdicao').value
+    salvarNoLocalStorage()
     alternarJanelaEdicao()
     mostrarTarefas()
 }
 function editarTarefa(pos) {
     document.querySelector('#inputTarefaEdicao').setAttribute('placeholder', tarefas[pos].texto)
+    document.querySelector('#inputTarefaEdicao').value = null
     alternarJanelaEdicao()
-    btnSalvar.setAttribute('onclick', `salvarTarefa(${pos})`)
+    btnSalvar.setAttribute('onclick', `btnAtualizarTarefa(${pos})`)
 }
 
 
 function deletarTudo() {
-    if (tarefas != 0) {
+    if (tarefas.length != 0) {
         let confirmacao = window.confirm('tem certeza que deseja excluir tudo?')
         if (confirmacao) {
             while (tarefas.length != 0) {
                 tarefas.pop()
+                salvarNoLocalStorage()
             }
             elementoImput.value = null;
             mostrarTarefas()
@@ -202,4 +210,7 @@ function deletarTudo() {
 function alternarJanelaEdicao() {
     janelaEdicao.classList.toggle('abrir');
     janelaEdicaoFundo.classList.toggle('abrir');
+}
+function salvarNoLocalStorage() {
+    localStorage.setItem('list_tarefas', JSON.stringify(tarefas))
 }

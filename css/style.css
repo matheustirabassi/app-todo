@@ -217,17 +217,17 @@ form {
     outline: none;
     border: 1px solid #191818;
     font-size: 1.2rem;
-    background: #2d2c2c;
-    color: #FFF;
+    background: #47454515;
+    color: rgb(0, 0, 0);
 }
 
 .frm-linha button {
-    background: #2d2c2c;
-    border: 1px solid #191818;
+    background: #2bff7c;
+    border: 1px solid #ffffff;
     padding: 7px;
     margin-bottom: 10px;
     border-radius: 12px;
-    color: #CCC;
+    color: rgb(255, 255, 255);
     cursor: pointer;
     height: 50px;
     font-size: 1.3rem;
