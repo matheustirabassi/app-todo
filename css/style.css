@@ -5,13 +5,14 @@
     padding: 0;
     border: none;
     outline: none;
-    /*background-color: rgb(203, 230, 253);*/
+    background: #264653;
 }
 
 body,
 button,
 input {
     font-family: 'Roboto', sans-serif;
+
 }
 
 .content {
@@ -25,7 +26,7 @@ input {
 h1 {
     margin-top: 16px;
     font-size: 55px;
-    color: rgb(0, 0, 0);
+    color: #E76F51;
 }
 h1 span{
     display: flex;
@@ -37,33 +38,35 @@ h1 span{
     cursor: pointer;
     margin:10px;
     font-size: 20px;
-    color: rgb(255, 255, 255);
+    color: #264653;
     
 }
 #tarefasEmAndamento{
-    background-color: gold;
+    background-color: #E9C46A;
 }
 #tarefasConcluidas{
-    background-color: #2bff7c;
+    background-color: #F4A261;
 }
 #todasAsTarefas{
-    background-color: black;
+    background-color: #2A9D8F;
 }
 .btnStatusTarefa:hover{
-    background-color: blue!important;
+    background-color: #E76F51!important;
 }
-.btnStatusTarefa:visited{
-    background-color: red!important;
-    color:red!important;
+.btnStatusTarefa:active{
+    background-color: #e76f519c!important;
+    
 }
 
 .checkBoxStatus{
-    color:#3c3a3a;
+    color:#A1A6B4;
     padding: 5px;
     cursor: pointer;
     width: 25px;
     height: 25px;
+    
 }
+
 .div1 {
     margin-top: 32px;
     width: 70%;
@@ -73,7 +76,7 @@ h1 span{
 }
 
 .div1 input {
-    border-bottom: 1px solid rgb(0, 0, 0);
+    border-bottom: 1px solid #E76F51;
     margin-right: 16px;
     font-size: 24px;
     width: 100%
@@ -83,20 +86,30 @@ h1 span{
     padding: 4px 16px;
     border-radius: 34px;
     cursor: pointer;
-    background-color: #2bff7c;
-    color: rgb(255, 255, 255);
+    background-color: #2A9D8F;
+    color: #264653;
     font-size: 24px;
 }
-
+.div1 input{
+    color: #E9C46A;
+}
+.div1 input::placeholder{
+    color:#e9c56a75;
+}
 .div1 button:hover {
     border: none!important;
-    background: blue;
+    background: #E76F51;
+}
+.div1 button:active{
+    background: #e76f519c;
 }
 
 .div2 {
     margin-top: 32px;
-    width: 70%;
+    width: 70%; 
 }
+
+
 
 .btnEditar {
     margin-left: auto;
@@ -106,29 +119,28 @@ h1 span{
     height: 40px;
     font-size: 23px;
     cursor: pointer;
-    color: gold;
+    color: #E9C46A;
     background: none;
 }
-
-.btnEditar:hover {
-    border: none!important;
-    background: rgba(0, 255, 13, 0.671);
+.btnEditar:active{
+    color: #e9c56a7a;
 }
-
 ul {
     margin-top: 16px;
+    color: #F4A261;
 }
-
 li {
     list-style-type: decimal;
     text-align: left;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid rgb(0, 0, 0);
+    border-bottom: 1px solid #E76F51;
     margin-bottom: 24px;
     font-size: 24px;
+    text-transform: capitalize;
 }
+
 
 .btnExcluir {
     font-size: 23px;
@@ -136,15 +148,14 @@ li {
     width: 40px;
     height: 40px;
     text-decoration: none;
-    color: tomato;
+    color: #E76F51;
     cursor: pointer;
     background: none;
 }
-
-.btnExcluir:hover {
-    border: none!important;
-    background: rgb(102, 102, 101);
+.btnExcluir:active{
+    color: #e76f5167;
 }
+
 #janelaEdicao.abrir {
     display: block !important;
 }
@@ -154,7 +165,7 @@ li {
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 20px;
-    background: #ffffff;
+    background: #264653;
     border: 1px solid #2f2e2e;
     width: 415px;
     border-radius: 12px;
@@ -189,13 +200,15 @@ li {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    border: 1px solid #2d2c2c;
-    background: #2d2c2c;
-    color: #FFF;
+    border: 1px solid #2A9D8F;
+    background: #264653;
+    color: #2A9D8F;
     outline: none;
     cursor: pointer;
 }
-
+#janelaEdicaoBtnFechar:hover{
+    color:#E76F51;
+}
 form {
     width: 100%;
     margin-top: 20px;
@@ -215,19 +228,21 @@ form {
     padding: 15px;
     border-radius: 12px;
     outline: none;
-    border: 1px solid #191818;
+    border: 1px solid #2A9D8F;
     font-size: 1.2rem;
-    background: #47454515;
-    color: rgb(0, 0, 0);
+    background: #2A9D8F;
+    color: #E9C46A;
+}
+.frm-linha input::placeholder{
+    color:#e9c56a75;
 }
 
 .frm-linha button {
-    background: #2bff7c;
-    border: 1px solid #ffffff;
+    background: #2A9D8F;
     padding: 7px;
     margin-bottom: 10px;
     border-radius: 12px;
-    color: rgb(255, 255, 255);
+    color: #264653;
     cursor: pointer;
     height: 50px;
     font-size: 1.3rem;
@@ -235,5 +250,5 @@ form {
 }
 
 .frm-linha button:hover {
-    background: #3c3a3a;
+    background: #E76F51;
 } 

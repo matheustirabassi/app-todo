@@ -9,7 +9,7 @@ class Tarefa {
     get _texto() {
         return this.texto
     }
-    set _texto (texto) {
+    set _texto(texto) {
         this.texto = texto
     }
     get _status() {
@@ -150,9 +150,14 @@ function mostrarTarefasPorStatus(status) {
 
 
 }
+const capitalize = str => {
+    if (typeof str !== 'string') {
+        return '';
+    }
+    return str.charAt(0).toUpperCase() + str.substr(1);
+}
 function adicionarTarefas() {
     const txtTarefa = elementoImput.value
-
     if (txtTarefa != '') {
         tarefas.push(new Tarefa(txtTarefa, false))
     } else {
