@@ -99,5 +99,5 @@ Feito com ❤️ por Matheus Tirabassi 👋🏽 Entre em contato!
 
 [![Linkedin Badge](https://img.shields.io/badge/-matheus-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/matheus-henrique-tirabassi-466022201/)](https://www.linkedin.com/in/matheus-henrique-tirabassi-466022201/) 
 [![Gmail Badge](https://img.shields.io/badge/tirabassi.matheus@aluno.ifsp.edu.br-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:tirabassi.matheus@aluno.ifsp.edu.br)](mailto:tirabassi.matheus@aluno.ifsp.edu.br)
-<img alt="GitHub followers" src="https://img.shields.io/github/followers/matheustirabassi?style=social">
+<img alt="GitHub followers" url = "https://github.com/matheustirabassi" src="https://img.shields.io/github/followers/matheustirabassi?style=social">
 
