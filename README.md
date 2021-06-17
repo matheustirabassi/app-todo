@@ -20,9 +20,10 @@
 Tabela de conteúdos
 ===================
 <!--ts-->
-   * [Sobre](#Sobre)
-   * [Demonstração da aplicação](#Demonstração-da-aplicação)
-   * [Features](#Features)
+   * [Sobre](#sobre)
+   * [Demonstração da aplicação](#demonstração-da-aplicação)
+   * [Features](#features)
+   * [Pré-requisitos](#pré-requisitos)
 <!--te-->
 
 <h4 align="center"> 
@@ -32,6 +33,14 @@ Tabela de conteúdos
 ## Sobre
 
 O projeto surgiu da oportunidade da realização de um projeto de estágio.
+
+### Features
+
+- [x] Cadastro de tarefa
+- [x] Edição da tarefa
+- [x] Filtro por status
+- [x] Excluir todas as tarefas
+- [x] Armazenar os dados mesmo após fechar o navegador
 
 ## Demonstração da aplicação
 Ao abrirmos o index.html na pasta raiz entramos na página principal
@@ -62,11 +71,31 @@ Se caso quisermos excluir tudo podemos fazer isso apertando em Deletar Tudo
 
 <image src = 'https://uploaddeimagens.com.br/images/003/292/706/full/Captura_de_tela_2021-06-17_134426.png?1623948276'  > </image>
 
+### Pré-requisitos
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
+[Node.js](https://nodejs.org/en/). 
+Além disto se desejar editar, um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
 
-### Features
+### 🛠 Tecnologias
 
-- [x] Cadastro de tarefa
-- [x] Edição da tarefa
-- [x] Filtro por status
-- [x] Excluir todas as tarefas
-- [x] Armazenar os dados mesmo após fechar o navegador
+As seguintes ferramentas foram usadas na construção do projeto:
+
+- [Html]
+- [CSS]
+- [Node.js](https://nodejs.org/en/)
+
+### Autor
+---
+
+
+ <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/64479165" width="100px;" alt=""/>
+ <br />
+ <sub><b>Matheus Tirabassi</b></sub></a> <a href="https://www.linkedin.com/in/matheus-henrique-tirabassi-466022201/" title="linkedin">🚀</a>
+
+
+Feito com ❤️ por Matheus Tirabassi 👋🏽 Entre em contato!
+
+[![Linkedin Badge](https://img.shields.io/badge/-matheus-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/matheus-henrique-tirabassi-466022201/)](https://www.linkedin.com/in/matheus-henrique-tirabassi-466022201/) 
+[![Gmail Badge](https://img.shields.io/badge/tirabassi.matheus@aluno.ifsp.edu.br-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:tirabassi.matheus@aluno.ifsp.edu.br)](mailto:tirabassi.matheus@aluno.ifsp.edu.br)
+<img alt="GitHub followers" src="https://img.shields.io/github/followers/matheustirabassi?style=social">
+
