@@ -150,12 +150,7 @@ function mostrarTarefasPorStatus(status) {
 
 
 }
-const capitalize = str => {
-    if (typeof str !== 'string') {
-        return '';
-    }
-    return str.charAt(0).toUpperCase() + str.substr(1);
-}
+
 function adicionarTarefas() {
     const txtTarefa = elementoImput.value
     if (txtTarefa != '') {
