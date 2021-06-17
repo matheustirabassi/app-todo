@@ -24,6 +24,8 @@ Tabela de conteúdos
    * [Demonstração da aplicação](#demonstração-da-aplicação)
    * [Features](#features)
    * [Pré-requisitos](#pré-requisitos)
+   * [🛠 Tecnologias](#🛠-tecnologias)
+   * [Autor](#autor)
 <!--te-->
 
 <h4 align="center"> 
@@ -80,8 +82,8 @@ Além disto se desejar editar, um editor para trabalhar com o código como [VSCo
 
 As seguintes ferramentas foram usadas na construção do projeto:
 
-- [Html]
-- [CSS]
+- Html
+- CSS
 - [Node.js](https://nodejs.org/en/)
 
 ### Autor
