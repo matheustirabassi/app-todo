@@ -24,7 +24,7 @@ Tabela de conteúdos
    * [Demonstração da aplicação](#demonstração-da-aplicação)
    * [Features](#features)
    * [Pré-requisitos](#pré-requisitos)
-   * [🛠 Tecnologias](#🛠-tecnologias)
+   * [Tecnologias](#tecnologias)
    * [Autor](#autor)
 <!--te-->
 
