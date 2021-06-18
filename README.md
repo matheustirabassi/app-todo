@@ -78,7 +78,7 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
 [Node.js](https://nodejs.org/en/). 
 Além disto se desejar editar, um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
 
-### 🛠 Tecnologias
+### Tecnologias
 
 As seguintes ferramentas foram usadas na construção do projeto:
 
